@@ -1,0 +1,26 @@
+## Gen AI prompt to summarise an aspect of legislation
+#Question2: Provide the link to the full legislative document ('Open whole Instrument'): This is the link to 'htmLink' (or 'pdfLink') within <div> 'printOptions'\n
+
+prompt = f'''
+        Your target is {target_url}
+        Your legislation document is {leg_text}
+        Question1: What is the legal title, legal citation and legislation type {legislation_type}?\n
+        Question2: Provide the link to the PDF or the full legislative document ('Open whole Instrument')\n
+        Question3: List the Changes over time for the legislation document. \n
+        Question4: What are the Changes to legislation i.t.o. known outstanding effects? \n
+        Question5: What is/are the geographical extent: (England and/or Wales, and/or Scotland and/or Northern Ireland) \n
+        Question6: What is the legislative type? \n
+        Question 7: When did the legislation document come into force, and list the part that came into force? \n
+        Question8: [Revocations and savings] What legislation(s) are revoked by this legislation document (if any) and when (dd/mmm/yyyy)? \n
+        Question9: [Revocations and savings] What legislation(s) revoked this legislation document (if any), and when (dd/mmm/yyyy)? \n 
+        Question10: What are the key changes in the updated legislation?\n
+        Question11: Summarise the given text into no more than 4 paragraph. In doing so, do not repeat the legal preambles such as order date, comes in force, revoke. 
+                    Although you'll provide a succinct legal summary, do so as a legal consultant, an environment consultant and a compliance officer.
+                    You should highlight the significant and/or material impact and what are key compliance issues.
+                    Also provide pointers to relevant ISO standards (where applicable). However, you MUST NOT hallucinate\n
+        Question12: What is/are the Key Provision(s) of the legislation document? \n
+        Question13: What is the bulleted description of the material/key topic of the legislation document subject? \n
+        Question14: Provide a legislative background in not more than 2 paragraph. You may include bullets. \n
+        Question15: List all of the legislations in date order.
+        Question16: Summarise, in UK spelling the explanatory note, the full legislative document as a consultant; excluding the legalities. DO NOT repeat questions 11 and 14.
+        '''
